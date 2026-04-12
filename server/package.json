@@ -6,8 +6,12 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "start:dev": "nodemon --exec ts-node src/server.ts",
-    "test": "ts-node tests/users.test.ts"
+    "start:dev": "nodemon --exec ts-node -r tsconfig-paths/register src/server.ts",
+    "test:manual": "ts-node -r tsconfig-paths/register tests/manual/runner.ts",
+    "test:log": "ts-node -r tsconfig-paths/register scripts/test-api.ts",
+    "db:seed-admin": "ts-node -r tsconfig-paths/register scripts/seed-admin.ts",
+    "db:seed-data": "ts-node -r tsconfig-paths/register scripts/seed-data.ts",
+    "db:seed": "npm run db:seed-admin && npm run db:seed-data"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +37,7 @@
     "@types/node": "^25.5.0",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^6.0.2"
   }
 }
