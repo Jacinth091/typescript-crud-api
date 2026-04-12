@@ -94,6 +94,7 @@ curl -X POST http://localhost:4000/users \
   -d '{
     "title": "Mr",
     "firstName": "John",
+    "middleName": "Quincy",
     "lastName": "Doe",
     "role": "User",
     "email": "john@example.com",
@@ -116,7 +117,7 @@ curl http://localhost:4000/users/1
 ```bash
 curl -X PUT http://localhost:4000/users/1 \
   -H "Content-Type: application/json" \
-  -d '{"firstName": "Johnny", "email": "johnny@example.com"}'
+  -d '{"firstName": "Johnny", "middleName": "J.", "email": "johnny@example.com"}'
 ```
 
 ### Delete a User
